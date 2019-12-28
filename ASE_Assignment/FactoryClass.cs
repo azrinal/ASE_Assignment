@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ASE_Assignment
 {
+    /// <summary>
+    /// It passes the values on class of an objects
+    /// </summary>
     class FactoryClass : Creator
     {
+        /// <summary>
+        /// It passes the shape of any objects
+        /// </summary>
+        /// <param name="shapeType"></param>
+        /// <returns></returns>
         public override IShape getShape(string shapeType)
         {
             shapeType = shapeType.ToLower().Trim(); //To get rid of Case Sensitivity
@@ -30,6 +38,7 @@ namespace ASE_Assignment
             }
             else
             {
+                //If the shape doesnot have any defination in our project throw an appropriate exception
                 System.ArgumentException argEx = new System.ArgumentException("Factory error: " + shapeType + " does not exist");
                 throw argEx;
             }

@@ -11,16 +11,27 @@ using System.Windows.Forms;
 
 namespace ASE_Assignment
 {
+    /// <summary>
+    /// Our GraphicsProgram is inheriting Form class
+    /// </summary>
     public partial class GraphicsProgram : Form
     {
+        /// <summary>
+        /// This is the Class defination of GrpahicsProgram Class
+        /// </summary>
         public GraphicsProgram()
         {
             InitializeComponent();
         }
 
         Creator factory = new FactoryClass();
+        //Defining Instance Variables
         int x = 0, y = 0, width, height, radius;
-    
+        /// <summary>
+        /// It saves the data intested on the rich text box to the destination folder.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -39,7 +50,11 @@ namespace ASE_Assignment
         {
 
         }
-
+        /// <summary>
+        /// The action performed is to clear the Output Panel and code on the rich text box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtInputCode.Clear();
@@ -50,6 +65,11 @@ namespace ASE_Assignment
         {
 
         }
+        /// <summary>
+        /// It enables to upload text files and exectues the codes in it through the rich text box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpload_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
@@ -62,6 +82,7 @@ namespace ASE_Assignment
 
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
+            //Browse .txt file and docx from computer
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -95,10 +116,15 @@ namespace ASE_Assignment
             x = toX;
             y = toY;
         }
+        /// <summary>
+        /// This method executes the commands provided from the user from the rich text box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRun_Click(object sender, EventArgs e)
         {
             Graphics g = pnlOutput.CreateGraphics();
-
+            
             string command = txtInputCode.Text.ToLower();
             string[] commandline = command.Split(new String[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -141,25 +167,6 @@ namespace ASE_Assignment
                         Int32.TryParse(param[0], out x);
                         Int32.TryParse(param[1], out y);
                         drawTo(x, y);
-                    }
-
-                }
-                else if (cmd[0].Equals("drawline") == true)
-                {
-                    string[] param = cmd[1].Split(',');
-                    int toX = 0, toY = 0;
-                    if (param.Length != 2)
-                    {
-                        MessageBox.Show("Incorrect Parameter");
-
-                    }
-                    else
-                    {
-                        Int32.TryParse(param[0], out toX);
-                        Int32.TryParse(param[1], out toY);
-                        IShape line = factory.getShape("line");
-                        line.set(x, y, toX, toY);
-                        line.draw(g);
                     }
 
                 }
@@ -219,7 +226,7 @@ namespace ASE_Assignment
                 else if (cmd[0].Equals("triangle") == true)
                 {
                     string[] param = cmd[1].Split(',');
-                    if (param.Length != 3)
+                    if (param.Length != 2)
                     {
                         MessageBox.Show("Incorrect Parameter");
 
