@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GraphicsProgram));
             this.txtInputCode = new System.Windows.Forms.RichTextBox();
             this.pnlOutput = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRun = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnRun = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             // pnlOutput
             // 
+            this.pnlOutput.BackColor = System.Drawing.SystemColors.Info;
             this.pnlOutput.Location = new System.Drawing.Point(380, 5);
             this.pnlOutput.Name = "pnlOutput";
             this.pnlOutput.Size = new System.Drawing.Size(1097, 501);
@@ -57,11 +59,12 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.ForeColor = System.Drawing.Color.Red;
             this.richTextBox1.Location = new System.Drawing.Point(9, 512);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(923, 341);
             this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // panel1
             // 
@@ -74,45 +77,49 @@
             this.panel1.Size = new System.Drawing.Size(536, 340);
             this.panel1.TabIndex = 3;
             // 
-            // btnRun
-            // 
-            this.btnRun.Location = new System.Drawing.Point(30, 27);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(195, 73);
-            this.btnRun.TabIndex = 0;
-            this.btnRun.Text = "Run";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(30, 164);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(195, 73);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnClear.Location = new System.Drawing.Point(304, 27);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(195, 73);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpload
             // 
+            this.btnUpload.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnUpload.Location = new System.Drawing.Point(304, 164);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(195, 73);
             this.btnUpload.TabIndex = 2;
             this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSave.Location = new System.Drawing.Point(30, 164);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(195, 73);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnRun
+            // 
+            this.btnRun.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnRun.Location = new System.Drawing.Point(30, 27);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(195, 73);
+            this.btnRun.TabIndex = 0;
+            this.btnRun.Text = "Run";
+            this.btnRun.UseVisualStyleBackColor = false;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // GraphicsProgram
             // 

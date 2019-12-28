@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Guidelines:
+Navigating on x-axis and y-axis : moveto 10,20 [moveto parameter1,parameter2]
+
+For Drawing Circle            : circle 23              [circle parameter_1]
+For Drawing Rectangle     : rectangle 45,25    [rectangle parameter_1,parameter2]
+For Drawing Triangle        : triangle 30,20,30  [triangle parameter_1,parameter_2,parameter_3]</value>
+  </data>
 </root>

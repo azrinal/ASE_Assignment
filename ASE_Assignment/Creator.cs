@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ASE_Assignment
 {
-    class Creator
+    abstract class Creator
     {
+        public abstract IShape getShape(string ShapeType);
+
     }
 }
