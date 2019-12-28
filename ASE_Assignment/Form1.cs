@@ -10,11 +10,36 @@ using System.Windows.Forms;
 
 namespace ASE_Assignment
 {
-    public partial class Form1 : Form
+    public partial class GraphicsProgram : Form
     {
-        public Form1()
+        public GraphicsProgram()
         {
             InitializeComponent();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInputCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
